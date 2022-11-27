@@ -1,0 +1,682 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "123",
+            "roleState": true,
+            "default": true,
+            "region": "",
+            "roleId": 1
+        },
+        {
+            "username": "A",
+            "password": "123",
+            "region": "亞洲",
+            "roleId": 2,
+            "roleState": true,
+            "default": false,
+            "id": 2
+        },
+        {
+            "username": "B",
+            "password": "123",
+            "region": "亞洲",
+            "roleId": 3,
+            "roleState": true,
+            "default": false,
+            "id": 3
+        },
+        {
+            "username": "C",
+            "password": "123",
+            "region": "歐洲",
+            "roleId": 3,
+            "roleState": true,
+            "default": false,
+            "id": 4
+        }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "roleName": "超級管理員",
+            "roleType": 1,
+            "rights": [
+                "/user-manage",
+                "/user-manage/add",
+                "/user-manage/delete",
+                "/user-manage/update",
+                "/user-manage/list",
+                "/right-manage",
+                "/right-manage/role/list",
+                "/right-manage/right/list",
+                "/right-manage/role/update",
+                "/right-manage/role/delete",
+                "/right-manage/right/update",
+                "/right-manage/right/delete",
+                "/news-manage",
+                "/news-manage/list",
+                "/news-manage/add",
+                "/news-manage/update/:id",
+                "/news-manage/preview/:id",
+                "/news-manage/draft",
+                "/news-manage/category",
+                "/audit-manage",
+                "/audit-manage/audit",
+                "/audit-manage/list",
+                "/publish-manage",
+                "/publish-manage/unpublished",
+                "/publish-manage/published",
+                "/publish-manage/sunset",
+                "/home"
+            ]
+        },
+        {
+            "id": 2,
+            "roleName": "區域管理員",
+            "roleType": 2,
+            "rights": [
+                "/home",
+                "/news-manage/list",
+                "/news-manage/add",
+                "/publish-manage/unpublished",
+                "/publish-manage/published",
+                "/publish-manage/sunset",
+                "/audit-manage/audit",
+                "/audit-manage/list",
+                "/news-manage/update/:id",
+                "/news-manage/preview/:id",
+                "/news-manage/draft",
+                "/news-manage/category",
+                "/news-manage",
+                "/audit-manage",
+                "/publish-manage",
+                "/user-manage/add",
+                "/user-manage/delete",
+                "/user-manage/update",
+                "/user-manage",
+                "/user-manage/list"
+            ]
+        },
+        {
+            "id": 3,
+            "roleName": "區域編輯",
+            "roleType": 3,
+            "rights": [
+                "/news-manage",
+                "/audit-manage",
+                "/news-manage/list",
+                "/news-manage/add",
+                "/news-manage/update/:id",
+                "/news-manage/preview/:id",
+                "/news-manage/draft",
+                "/audit-manage",
+                "/audit-manage/list",
+                "/publish-manage",
+                "/publish-manage/unpublished",
+                "/publish-manage/published",
+                "/publish-manage/sunset",
+                "/home"
+            ]
+        }
+    ],
+    "children": [
+        {
+            "id": 3,
+            "title": "添加用戶",
+            "rightId": 2,
+            "key": "/user-manage/add",
+            "grade": 2
+        },
+        {
+            "id": 4,
+            "title": "刪除用戶",
+            "rightId": 2,
+            "key": "/user-manage/delete",
+            "grade": 2
+        },
+        {
+            "id": 5,
+            "title": "修改用戶",
+            "rightId": 2,
+            "key": "/user-manage/update",
+            "grade": 2
+        },
+        {
+            "id": 6,
+            "title": "用戶列表",
+            "rightId": 2,
+            "key": "/user-manage/list",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 8,
+            "title": "角色列表",
+            "rightId": 7,
+            "key": "/right-manage/role/list",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 9,
+            "title": "權限列表",
+            "rightId": 7,
+            "key": "/right-manage/right/list",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 10,
+            "title": "修改角色",
+            "rightId": 7,
+            "key": "/right-manage/role/update",
+            "grade": 2
+        },
+        {
+            "id": 11,
+            "title": "刪除角色",
+            "rightId": 7,
+            "key": "/right-manage/role/delete",
+            "grade": 2
+        },
+        {
+            "id": 12,
+            "title": "修改權限",
+            "rightId": 7,
+            "key": "/right-manage/right/update",
+            "grade": 2
+        },
+        {
+            "id": 13,
+            "title": "刪除權限",
+            "rightId": 7,
+            "key": "/right-manage/right/delete",
+            "grade": 2
+        },
+        {
+            "id": 15,
+            "title": "新聞列表",
+            "rightId": 14,
+            "key": "/news-manage/list",
+            "grade": 2
+        },
+        {
+            "id": 16,
+            "title": "撰寫新聞",
+            "rightId": 14,
+            "key": "/news-manage/add",
+            "grade": 2,
+            "pagepermission": 1
+        },
+        {
+            "id": 17,
+            "title": "新聞更新",
+            "rightId": 14,
+            "key": "/news-manage/update/:id",
+            "grade": 2,
+            "routepermission": 1
+        },
+        {
+            "id": 18,
+            "title": "新聞預覽",
+            "rightId": 14,
+            "key": "/news-manage/preview/:id",
+            "grade": 2,
+            "routepermission": 1
+        },
+        {
+            "id": 19,
+            "title": "草稿箱",
+            "rightId": 14,
+            "key": "/news-manage/draft",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 20,
+            "title": "新聞分類",
+            "rightId": 14,
+            "key": "/news-manage/category",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 22,
+            "title": "審核新聞",
+            "rightId": 21,
+            "key": "/audit-manage/audit",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 23,
+            "title": "審核列表",
+            "rightId": 21,
+            "key": "/audit-manage/list",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 25,
+            "title": "待發布",
+            "rightId": 24,
+            "key": "/publish-manage/unpublished",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 26,
+            "title": "已發布",
+            "rightId": 24,
+            "key": "/publish-manage/published",
+            "pagepermission": 1,
+            "grade": 2
+        },
+        {
+            "id": 27,
+            "title": "已下線",
+            "rightId": 24,
+            "key": "/publish-manage/sunset",
+            "pagepermission": 1,
+            "grade": 2
+        }
+    ],
+    "rights": [
+        {
+            "id": 1,
+            "title": "首頁",
+            "key": "/home",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 2,
+            "title": "用戶管理",
+            "key": "/user-manage",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 7,
+            "title": "權限管理",
+            "key": "/right-manage",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 14,
+            "title": "新聞管理",
+            "key": "/news-manage",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 21,
+            "title": "審核管理",
+            "key": "/audit-manage",
+            "pagepermission": 1,
+            "grade": 1
+        },
+        {
+            "id": 24,
+            "title": "發布管理",
+            "key": "/publish-manage",
+            "pagepermission": 1,
+            "grade": 1
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "title": "時事新聞",
+            "value": "時事新聞"
+        },
+        {
+            "id": 2,
+            "title": "環球經濟",
+            "value": "環球經濟"
+        },
+        {
+            "id": 3,
+            "title": "科學技術",
+            "value": "科學技術"
+        },
+        {
+            "id": 4,
+            "title": "政治社會",
+            "value": "政治社會"
+        },
+        {
+            "id": 5,
+            "title": "世界體育",
+            "value": "世界體育"
+        },
+        {
+            "id": 6,
+            "title": "生活理財",
+            "value": "生活理財"
+        }
+    ],
+    "regions": [
+        {
+            "id": 1,
+            "title": "亞洲",
+            "value": "亞洲"
+        },
+        {
+            "id": 2,
+            "title": "歐洲",
+            "value": "歐洲"
+        },
+        {
+            "id": 3,
+            "title": "北美洲",
+            "value": "北美洲"
+        },
+        {
+            "id": 4,
+            "title": "南美洲",
+            "value": "南美洲"
+        },
+        {
+            "id": 5,
+            "title": "非洲",
+            "value": "非洲"
+        },
+        {
+            "id": 6,
+            "title": "大洋洲",
+            "value": "大洋洲"
+        },
+        {
+            "id": 7,
+            "title": "南極洲",
+            "value": "南極洲"
+        }
+    ],
+    "news": [
+        {
+            "title": "千鋒教育",
+            "categoryId": 3,
+            "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">      看到有同學在問大連的</span><a href=\"http://www.mobiletrain.org/\" target=\"_blank\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">千鋒教育</span></a><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">校址在哪里，這里小千就來給大家介紹一下千鋒教育和校區地址，給大家參考一下。</span></p>\n<p style=\"text-align:center;\"></p>\n<img src=\"http://upload.mobiletrain.org/2020/1218/1608271193504.jpg\" alt=\"u=313055993,4178527216&fm=26&gp=0\" style=\"height: ;width: \"/>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\"><strong>千鋒教育大連校區地址</strong></span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">      首先先給大家介紹一下千鋒教育的大連校區地址，坐落在：遼寧省大連市高新園區愛賢街10號大連設計城A座901，聯系和咨詢電話可以撥打 400-811-9990，會有專人負責接待同學。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\"><strong>千鋒教育</strong></span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">      再給大家簡單介紹一下千鋒教育，千鋒教育是北京千鋒互聯科技有限公司旗下的品牌，開設了12大熱門課程，並且每月都會更新最新的前沿技術。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">      千鋒教育一直秉持著“用良心做教育”的理念，在全國擁有上百家的合作高校，更是有超過20000家的合作企業。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">      千鋒教育總部設立在北京，目前在目前已在深圳、上海、鄭州、廣州、大連、武漢、成都、西安、杭州、青島、重慶、長沙、哈爾濱、南京、太原建立分公司。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">      千鋒教育開設HTML5前端、Java、Python、全鏈路設計、雲計算、軟件測試、大數據、智能物聯網、Unity遊戲開發、Go語言開發、網絡安全、互聯網營銷學科，並推出軟考、Adobe認證、PMP認證、</span><a href=\"http://www.mobiletrain.org/topic/redhat/\" target=\"_blank\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">紅帽RHCE認證</span></a><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">課程</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: 微軟雅黑, \"PingFang SC;\">      最後歡迎大家來到千鋒教育大連校區了解我們的培訓課程，全程名師面授確保課程品質，還享受2周的免費試聽不滿意不繳費隨時退學即可，趕緊來了解一下吧~~~~</span></p>\n<p style=\"text-align:start;\"><br>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1615777743864,
+            "star": 1027,
+            "view": 2023,
+            "id": 1,
+            "publishTime": 1615778496314
+        },
+        {
+            "title": "Hello World",
+            "categoryId": 1,
+            "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.</span></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">How to Read This Guide</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.</span></p>\n<blockquote style=\"margin-left:-30px;\"></blockquote>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Tip</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This guide is designed for people who prefer</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>learning concepts step by step</strong>. If you prefer to learn by doing, check out our</span> <a href=\"https://reactjs.org/tutorial/tutorial.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">practical tutorial</span></a><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">. You might find this guide and the tutorial complementary to each other.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you’re reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Every chapter in this guide builds on the knowledge introduced in earlier chapters.</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.</strong></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">For example,</span> <a href=\"https://reactjs.org/docs/introducing-jsx.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">“Introducing JSX”</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">is the next chapter after this one.</span></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Knowledge Level Assumptions</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React is a JavaScript library, and so we’ll assume you have a basic understanding of the JavaScript language.</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>If you don’t feel very confident, we recommend</strong></span> <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>going through a JavaScript tutorial</strong></span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>to check your knowledge level</strong></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won’t have to feel like you’re learning both React and JavaScript at the same time.</span></p>\n<blockquote style=\"margin-left:-30px;\"></blockquote>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Note</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven’t worked with JavaScript in the last few years,</span> <a href=\"https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">these three points</span></a> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">should get you most of the way.</span></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Let’s Get Started!</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Keep scrolling down, and you’ll find the link to the</span> <a href=\"https://reactjs.org/docs/introducing-jsx.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">next chapter of this guide</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">right before the website footer.</span><br>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1615778694831,
+            "star": 500,
+            "view": 805,
+            "id": 2,
+            "publishTime": 1615778911028
+        },
+        {
+            "title": "Introducing JSX",
+            "categoryId": 2,
+            "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">This funny tag syntax is neither a string nor HTML.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">JSX produces React “elements”. We will explore rendering them to the DOM in the</span> <a href=\"https://reactjs.org/docs/rendering-elements.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">next section</span></a><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">. Below, you can find the basics of JSX necessary to get you started.</span></p>\n<h3 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Why JSX?</span></h3>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Instead of artificially separating</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><em>technologies</em></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">by putting markup and logic in separate files, React</span> <a href=\"https://en.wikipedia.org/wiki/Separation_of_concerns\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">separates</span> <span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><em>concerns</em></span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with loosely coupled units called “components” that contain both. We will come back to components in a</span> <a href=\"https://reactjs.org/docs/components-and-props.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">further section</span></a><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">, but if you’re not yet comfortable putting markup in JS,</span> <a href=\"https://www.youtube.com/watch?v=x7cQ3mrcKaY\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">this talk</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">might convince you otherwise.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React</span> <a href=\"https://reactjs.org/docs/react-without-jsx.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">doesn’t require</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">With that out of the way, let’s get started!</span></p>\n<h3 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Embedding Expressions in JSX</span></h3>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In the example below, we declare a variable called</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>name</code></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">and then use it inside JSX by wrapping it in curly braces:</span></p>\n<p style=\"text-align:start;\"></p>\n<pre style=\"margin-left:1rem;\"><br>&nbsp;</pre>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1615778715619,
+            "star": 600,
+            "view": 983,
+            "id": 3,
+            "publishTime": 1615778911762
+        },
+        {
+            "title": "Rendering Elements",
+            "categoryId": 3,
+            "content": "<p style=\"text-align:start;\"></p>\n<h2 style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React Only Updates What’s Necessary</span></h2>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">You can verify by inspecting the</span> <a href=\"https://reactjs.org/redirect-to-codepen/rendering-elements/update-rendered-element\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">last example</span></a> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with the browser tools:</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif\" alt=\"DOM inspector showing granular updates\" style=\"height: ;width: \"/>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(109,109,109);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Is this page useful?</span><a href=\"https://github.com/reactjs/reactjs.org/tree/master/content/docs/rendering-elements.md\" target=\"_self\"><span style=\"color: rgb(55,57,64);background-color: transparent;font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Edit this page</span></a>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 3,
+            "createTime": 1615778740202,
+            "star": 800,
+            "view": 869,
+            "id": 4,
+            "publishTime": 1615778912481
+        },
+        {
+            "title": "Components and Props",
+            "categoryId": 4,
+            "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(109,109,109);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a</span> <a href=\"https://reactjs.org/docs/react-component.html\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">detailed component API reference here</span></a><span style=\"color: rgb(109,109,109);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</span></p>\n<h2 style=\"text-align:start;\"><br> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Let’s recap what happens in this example:</span></h2>\n<ol>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">We call</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>ReactDOM.render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;Welcome name=\"Sara\" /&gt;</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">element.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Welcome</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component with</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>{name: 'Sara'}</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">as the props.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Our</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Welcome</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component returns a</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">element as the result.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React DOM efficiently updates the DOM to match</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code>.</span></li>\n</ol>\n<blockquote style=\"text-align:start;\"></blockquote>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>Note:</strong></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Always start component names with a capital letter.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React treats components starting with lowercase letters as DOM tags. For example,</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;div /&gt;</code></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">represents an HTML div tag, but</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;Welcome /&gt;</code></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">represents a component and requires</span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Welcome</code></span> <span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">to be in scope.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">To learn more about the reasoning behind this convention, please read</span> <a href=\"https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">JSX In Depth</span></a><span style=\"color: rgb(0,0,0);background-color: rgba(255,229,100,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">.</span></p>\n<h2 style=\"text-align:start;\"><br>&nbsp;</h2>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1615778777924,
+            "star": 108,
+            "view": 203,
+            "id": 5,
+            "publishTime": 1615778914498
+        },
+        {
+            "title": "State and Lifecycle",
+            "categoryId": 4,
+            "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Now the clock ticks every second.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Let’s quickly recap what’s going on and the order in which the methods are called:</span></p>\n<ol>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">When</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;Clock /&gt;</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">is passed to</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>ReactDOM.render()</code>, React calls the constructor of the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component. Since</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">needs to display the current time, it initializes</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>this.state</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with an object including the current time. We will later update this state.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React then calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component’s</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code>’s render output.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">When the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">output is inserted in the DOM, React calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>componentDidMount()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">lifecycle method. Inside it, the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component asks the browser to set up a timer to call the component’s</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>tick()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method once a second.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Every second the browser calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>tick()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method. Inside it, the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component schedules a UI update by calling</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">with an object containing the current time. Thanks to the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">call, React knows the state has changed, and calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method again to learn what should be on the screen. This time,</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>this.state.date</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">in the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>render()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">method will be different, and so the render output will include the updated time. React updates the DOM accordingly.</span></li>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">If the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>Clock</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">component is ever removed from the DOM, React calls the</span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>componentWillUnmount()</code></span> <span style=\"color: rgb(26,26,26);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">lifecycle method so the timer is stopped.</span></li>\n</ol>\n<h2 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Using State Correctly</span></h2>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">There are three things you should know about</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code>.</span></p>\n<h3 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Do Not Modify State Directly</span></h3>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">For example, this will not re-render a component:</span></p>\n<p style=\"text-align:start;\"><br>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1615778808893,
+            "star": 300,
+            "view": 454,
+            "id": 6,
+            "publishTime": 1615778916224
+        },
+        {
+            "title": "Forms",
+            "categoryId": 5,
+            "content": "<h2 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Controlled Components</span></h2>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">In HTML, form elements such as</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;input&gt;</code>,</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;textarea&gt;</code>, and</span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>&lt;select&gt;</code></span> <span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with</span> <a href=\"https://reactjs.org/docs/react-component.html#setstate\" target=\"_self\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code>setState()</code></span></a><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">We can combine the two by making the React state be the “single source of truth”. Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a “controlled component”.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:</span></p>\n<p style=\"text-align:start;\"><br>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1615778852584,
+            "star": 309,
+            "view": 480,
+            "id": 7,
+            "publishTime": 1615778917074
+        },
+        {
+            "title": "Thinking in React",
+            "categoryId": 6,
+            "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(109,109,109);font-size: 18px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">One of the many great parts of React is how it makes you think about apps as you build them. In this document, we’ll walk you through the thought process of building a searchable product data table using React.</span></p>\n<h2 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Start With A Mock</span></h2>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Imagine that we already have a JSON API and a mock from our designer. The mock looks like this:</span></p>\n<p style=\"text-align:start;\"></p>\n<img src=\"https://reactjs.org/static/1071fbcc9eed01fddc115b41e193ec11/d4770/thinking-in-react-mock.png\" alt=\"Mockup\" style=\"height: 276.854px;width: 228px\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 17px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">Our JSON API returns some data that looks like this:</span></p>\n<p style=\"margin-left:0px;\"><br> <span style=\"font-size: 17px;\">The first thing you’ll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. If you’re working with a designer, they may have already done this, so go talk to them! Their Photoshop layer names may end up being the names of your React components!</span></p>\n<p style=\"margin-left:0px;\"><span style=\"font-size: 17px;\">But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object. One such technique is the</span> <a href=\"https://en.wikipedia.org/wiki/Single_responsibility_principle\" target=\"_blank\"><span style=\"color: rgb(26,26,26);background-color: rgba(187,239,253,0.3);font-size: 17px;\">single responsibility principle</span></a><span style=\"font-size: 17px;\">, that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.</span></p>\n<p style=\"margin-left:0px;\"><span style=\"font-size: 17px;\">Since you’re often displaying a JSON data model to a user, you’ll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That’s because UI and data models tend to adhere to the same</span> <span style=\"font-size: 17px;\"><em>information architecture</em>. Separate your UI into components, where each component matches one piece of your data model.</span></p>\n<p style=\"margin-left:0px;\"></p>\n<img src=\"https://reactjs.org/static/eb8bda25806a89ebdc838813bdfa3601/6b2ea/thinking-in-react-components.png\" alt=\"Component diagram\" style=\"height: 319.521px;width: 275px\"/>\n<p style=\"margin-left:0px;\"><span style=\"font-size: 17px;\">You’ll see here that we have five components in our app. We’ve italicized the data each component represents.</span></p>\n<ol>\n<li style=\"margin-left:0px;\"><span style=\"color: rgb(26,26,26);font-size: 16px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><code><strong>FilterableProductTable</strong></code></span> <span style=\"color: rgb(26,26,26);font-size: 16px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\"><strong>(orange):</strong></span> <span style=\"color: rgb(26,26,26);font-size: 16px;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\">contains the entirety of the example</span><br>&nbsp;</li>\n</ol>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1615778891518,
+            "star": 781,
+            "view": 889,
+            "id": 8,
+            "publishTime": 1615778917615
+        },
+        {
+            "title": "測試",
+            "categoryId": 3,
+            "content": "<p>測試</p>\n",
+            "region": "",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 3,
+            "createTime": 1616203436307,
+            "star": 1,
+            "view": 6,
+            "id": 9,
+            "publishTime": 1616203519274
+        },
+        {
+            "title": "美國期中選舉",
+            "categoryId": 1,
+            "content": "<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">本次選舉參議院有35席次改選</span></p>\n<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">目前參議院總數100席中，</span><span style=\"color: rgb(65,168,95);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\"><strong>民主黨</strong></span><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">掌握48席、</span><span style=\"color: rgb(44,130,201);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\"><strong>共和黨</strong></span><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">擁49席</span></p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1668086262875,
+            "star": 0,
+            "view": 0,
+            "id": 10,
+            "publishTime": 1668169395883
+        },
+        {
+            "title": "雲林農食節",
+            "categoryId": 1,
+            "content": "<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">✓ 6大焦點</span></p>\n<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">⌲ 市集×音樂×繪本×食</span><em>農</em><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">×沙龍×秋收</span></p>\n<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">✓ 60位精選攤位</span></p>\n<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">⌲ 持續新增！敬請期待！</span></p>\n<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\"> ✓ 8種優質體驗</span></p>\n<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">⌲ 加工×花藝×植栽×食創×料理</span></p>\n<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">✓ 你挺永續我挺你</span></p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 3,
+            "createTime": 1668126639316,
+            "star": 0,
+            "view": 0,
+            "id": 11
+        },
+        {
+            "title": "今日空氣品質",
+            "categoryId": 6,
+            "content": "<p><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 8px;font-family: Microsoft JhengHei;\">環保署提醒中部、雲嘉南地區 敏感族群應減少在戶外劇烈活動(</span><span style=\"color: rgb(0,0,0);background-color: rgb(243,121,52);font-size: 8px;font-family: Microsoft JhengHei;\">橘色提醒</span><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 8px;font-family: Microsoft JhengHei;\">)。</span>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 3,
+            "createTime": 1668139174951,
+            "star": 0,
+            "view": 0,
+            "id": 12,
+            "publishTime": 1668173638797
+        },
+        {
+            "title": "北市辯論",
+            "categoryId": 1,
+            "content": "<p><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">台北市長選舉電視</span><em>辯論</em><span style=\"color: rgb(77,81,86);background-color: rgb(255,255,255);font-size: 14px;font-family: arial, sans-serif;\">會於昨（5）日舉行，國民黨蔣萬安、民進黨陳時中、無黨籍黃珊珊各自發表論述。</span>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 3,
+            "createTime": 1668142567595,
+            "star": 0,
+            "view": 0,
+            "id": 13,
+            "publishTime": 1668169337315
+        },
+        {
+            "title": "「新竹市長投給誰」網路民調曝光 這人超過50％遙遙領先",
+            "categoryId": 1,
+            "content": "<p><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">新竹市長選舉已進入倒數計時，國民黨候選人林耕仁、民眾黨高虹安、民進黨沈慧虹等藍綠白陣營，進行「三腳督」之戰。</span></p>\n<p><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">根據媒體一份「新竹市長您會投給誰」最新網路民調顯示，林耕仁以54.38％領先高虹安的28.40％、沈慧虹14.05％。</span><span style=\"font-size: 14px;\"> </span></p>\n",
+            "region": "亞洲",
+            "author": "B",
+            "roleId": 3,
+            "auditState": 3,
+            "publishState": 0,
+            "createTime": 1668155780376,
+            "star": 0,
+            "view": 0,
+            "id": 14
+        },
+        {
+            "title": "收賄及收回扣近3千萬 台中議會前秘書長貪汙再判17年",
+            "categoryId": 1,
+            "content": "<p><span style=\"color: rgb(0,0,0);background-color: rgb(250,250,250);font-size: 14px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\">台中市議會前秘書長陳健楷利用辦理議會採購工程刁難業者，一審被判刑20年、二審判13年6月，更一審以他犯貪汙3罪判16年。</span></p>\n<p><span style=\"color: rgb(0,0,0);background-color: rgb(250,250,250);font-size: 14px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\">陳上訴，最高法院駁回其中1罪判8年4月確定，陳已入監，發回的其中2罪，台中高分院更二審審酌，陳其中一項收回扣2588萬元佔工程款4成，今各判陳10年、7年，仍可上訴。</span><span style=\"font-size: 14px;\"> </span></p>\n",
+            "region": "亞洲",
+            "author": "A",
+            "roleId": 2,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1668155884524,
+            "star": 0,
+            "view": 0,
+            "id": 15
+        },
+        {
+            "title": "「菸防法起床了！」社福團體手機鬧鈴響徹立院　盼盡速完成修法",
+            "categoryId": 1,
+            "content": "<p><span style=\"color: rgb(59,59,59);background-color: rgb(255,255,255);font-size: 14px;font-family: Noto Sans TC\", Roboto, Arial, sans-serif;\">今年最重要的國民健康法案，當屬十多年未修法的《菸害防制法》，此法在立法院一讀通過後，雖然經過衛環委員會逐條審查，但朝野認知差異過大，只能交由黨團繼續協商。長期關注《菸防法》修法的社福團體擔憂，這麼重要的民生法案就此沉睡在立法院裡，9日帶領民眾拿出手機設定鬧鈴，用各式各樣特別又大聲的鬧鈴聲，希望藉此呼籲「《菸防法》起床了！」新北市家長志工教育成長協會何若萍說，應該明訂全面禁售紙菸，並且設定落日條款，讓菸害不再荼毒台灣下一代，也讓台灣能早日成為一座無二手菸的乾淨島。</span><span style=\"font-size: 14px;\"> </span></p>\n",
+            "region": "歐洲",
+            "author": "C",
+            "roleId": 3,
+            "auditState": 3,
+            "publishState": 0,
+            "createTime": 1668156066964,
+            "star": 0,
+            "view": 0,
+            "id": 16
+        },
+        {
+            "title": "徐巧芯緊追「無良公關」 陳時中回應",
+            "categoryId": 4,
+            "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(35,42,49);background-color: rgb(255,255,255);font-size: 1.385em;font-family: YahooSans VF\", \"Yahoo Sans\", YahooSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\">選戰倒數15天，國民黨台北市議員徐巧芯緊咬「無良公關公司」臉書粉專的發文。民進黨台北市長候選人陳時中今天再回應，表示自己一點接觸、一點了解什麼都沒有，硬要做這樣的連結大可不必可以休矣。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(35,42,49);background-color: rgb(255,255,255);font-size: 1.385em;font-family: YahooSans VF\", \"Yahoo Sans\", YahooSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\">徐巧芯9日晚間在臉書貼文，表示看到網路流傳一份資料，內容指出建議找狗仔，跟拍市長候選人行程，底下還有蔣萬安、洪孟楷、徐巧芯等人簽名，指控根本是造假抹黑，急奔松山分局報案。陳時中昨天受訪表示，「有聽到這樣的訊息，但是跟我們完全無關」。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(35,42,49);background-color: rgb(255,255,255);font-size: 1.385em;font-family: YahooSans VF\", \"Yahoo Sans\", YahooSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\">陳時中今天上午到新北投市場、金龍市場掃街拜票，媒體詢問，「無良公關粉專爭議，徐巧芯說跟競總焦糖兩邊的交情蠻好的，她又貼出很多截圖，部長知情嗎？」</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(35,42,49);background-color: rgb(255,255,255);font-size: 1.385em;font-family: YahooSans VF\", \"Yahoo Sans\", YahooSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif;\">對此，陳時中表示，這件事情對競總來講，「我一點接觸、一點了解什麼都沒有，硬要做這樣的連結大可不必可以休矣，應該可以停了」。</span>&nbsp;</p>\n",
+            "region": "全球",
+            "author": "admin",
+            "roleId": 1,
+            "auditState": 2,
+            "publishState": 3,
+            "createTime": 1668173821780,
+            "star": 0,
+            "view": 0,
+            "id": 17,
+            "publishTime": 1668173846102
+        },
+        {
+            "title": "出遊必搶！「全台飯店下殺1111起、國內行程買1送1」　雙11限時開賣",
+            "categoryId": 6,
+            "content": "<p><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">一年一度「</span><a href=\"https://www.setn.com/Klist.aspx?TagID=9184&utm_source=setn.com&utm_medium=dictionary&utm_campaign=wordnews\" target=\"_self\"><span style=\"color: rgb(126,126,126);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\"><ins>雙11</ins></span></a><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">購物節」到來，旅行社也祭出超狂</span><a href=\"https://www.setn.com/Klist.aspx?TagID=3743&utm_source=setn.com&utm_medium=dictionary&utm_campaign=wordnews\" target=\"_self\"><span style=\"color: rgb(126,126,126);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\"><ins>優惠</ins></span></a><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">活動吸客，</span><a href=\"https://www.setn.com/Klist.aspx?TagID=570&utm_source=setn.com&utm_medium=dictionary&utm_campaign=wordnews\" target=\"_self\"><span style=\"color: rgb(126,126,126);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\"><ins>雄獅</ins></span></a><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">旅遊就宣布，11月11日當天推出「星級</span><a href=\"https://www.setn.com/Klist.aspx?TagID=3203&utm_source=setn.com&utm_medium=dictionary&utm_campaign=wordnews\" target=\"_self\"><span style=\"color: rgb(126,126,126);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\"><ins>飯店</ins></span></a><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">訂房1111元起」、「國內行程</span><a href=\"https://www.setn.com/Klist.aspx?TagID=16675&utm_source=setn.com&utm_medium=dictionary&utm_campaign=wordnews\" target=\"_self\"><span style=\"color: rgb(126,126,126);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\"><ins>買一送一</ins></span></a><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 20px;font-family: Arial, \"New Microsoft JhengHei\", \"Microsoft JhengHei\", sans-serif;\">」，包含入住雲林劍湖山渡假酒店、墾丁夏都酒店最低只要1,111元起，優惠上午9時起開搶，只限8小時、售完為止。</span>&nbsp;</p>\n",
+            "region": "亞洲",
+            "author": "A",
+            "roleId": 2,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1668243388041,
+            "star": 0,
+            "view": 0,
+            "id": 18,
+            "publishTime": 1668243398177
+        },
+        {
+            "title": "中職／中信兄弟二連霸 台中20日封王遊行、路線出爐",
+            "categoryId": 5,
+            "content": "<p><a href=\"https://udn.com/search/tagging/2/%E4%B8%AD%E4%BF%A1%E5%85%84%E5%BC%9F\" target=\"_self\"><span style=\"color: var(--dark-grey);background-color: rgb(250,250,250);font-size: 20px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\"><strong>中信兄弟</strong></span></a><span style=\"color: rgb(0,0,0);background-color: rgb(250,250,250);font-size: 20px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\">昨晚在</span><a href=\"https://udn.com/search/tagging/2/%E4%B8%AD%E8%8F%AF%E8%81%B7%E6%A3%92\" target=\"_self\"><span style=\"color: var(--dark-grey);background-color: rgb(250,250,250);font-size: 20px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\"><strong>中華職棒</strong></span></a><span style=\"color: rgb(0,0,0);background-color: rgb(250,250,250);font-size: 20px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\">總冠軍賽第4戰，以3比2險勝樂天桃猿，連續兩年拿下中華職棒總冠軍，中信兄弟應援團長小白賽後也預告，封王遊行日期訂在11月20日，從台中政府出發一路遊行至洲際</span><a href=\"https://udn.com/search/tagging/2/%E6%A3%92%E7%90%83\" target=\"_self\"><span style=\"color: var(--dark-grey);background-color: rgb(250,250,250);font-size: 20px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\"><strong>棒球</strong></span></a><span style=\"color: rgb(0,0,0);background-color: rgb(250,250,250);font-size: 20px;font-family: Noto Sans TC\", 黑體-繁, \"Apple LiGothic Medium\", PingFang, 微軟正黑體, \"Microsoft JhengHei\", \"WenQuanYi Zen Hei\", helvetica, Arial, sans-serif;\">場。</span>&nbsp;</p>\n",
+            "region": "歐洲",
+            "author": "C",
+            "roleId": 3,
+            "auditState": 2,
+            "publishState": 2,
+            "createTime": 1668255204389,
+            "star": 0,
+            "view": 1,
+            "id": 19,
+            "publishTime": 1668255262579
+        }
+    ]
+}
